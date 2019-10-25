@@ -48,9 +48,8 @@ COPY start_codedock.sh /usr/local/bin/start_codedock.sh
 
 RUN chmod +x /usr/local/bin/start_codedock.sh
 
-# Changing User back to coder
-# RUN usermod -aG docker coder && newgrp docker
+RUN wget -O /usr/bin/k3s https://github.com/rancher/k3s/releases/download/v0.10.0/k3s
+RUN chmod +x /usr/bin/k3s
 
-#USER coder
 
 ENTRYPOINT ["/usr/bin/dumb-init", "start_codedock.sh"]
