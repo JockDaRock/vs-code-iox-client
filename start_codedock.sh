@@ -1,4 +1,4 @@
 #!/bin/bash
 
 nohup dockerd &
-code-server --allow-http --no-auth
+code-server --bind-addr=0.0.0.0:8080
